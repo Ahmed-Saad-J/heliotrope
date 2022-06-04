@@ -1,0 +1,24 @@
+{
+  "name": "heliotrope",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "argon2": "^0.28.5",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.5",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  }
+}
