@@ -1,0 +1,11 @@
+@use "../util" as u;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: u.rem(20);
+  margin-inline: auto;
+
+  &__main {
+  }
+}

@@ -1,0 +1,35 @@
+@use "../util" as u;
+
+.container {
+  display: grid;
+  margin-inline: auto;
+  margin-top: 10rem;
+  width: clamp(u.rem(260), 30vw, u.rem(320));
+  //border: 3px solid var(--tertiary-color);
+  border-radius: 16px;
+  padding: 10px;
+  background-color: hsl(286, 100%, 60%);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: u.rem(10);
+}
+.form-input {
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: hsl(0, 0%, 9%);
+}
+.btn.submit {
+  width: 100%;
+  background-color: var(--highlight-color);
+  border-radius: 4px;
+  border: none;
+  color: var(--tertiary-color);
+  padding: u.rem(10) u.rem(15);
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: u.rem(30);
+  //margin-inline: auto;
+}
