@@ -45,7 +45,8 @@ app.use(express.static(path.join(__dirname,'public')))
 //routes
 app.use('/', require('./routes/index'))
 app.use('/', require('./routes/auth'))
-
+app.use('/admin', require('./routes/admin'))
+  
 
 
 const PORT=process.env.PORT
