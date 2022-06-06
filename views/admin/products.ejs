@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+</head>
+<body>
+<h1>products</h1>
+<div class="all-products">
+  <% products.forEach(function(product) { %>
+  <div class="product">
+    <div>
+      <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"/>
+
+    </div>
+  </div>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %>
