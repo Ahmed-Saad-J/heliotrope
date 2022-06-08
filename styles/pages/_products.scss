@@ -1,0 +1,35 @@
+@use "../util" as u;
+.product img {
+  width: clamp(u.rem(200), 20vw, u.rem(300));
+  height: clamp(u.rem(200), 20vw, u.rem(300));
+}
+td,
+th {
+  padding: 1rem;
+  // @include u.breakpoint-down(medium) {
+  //   display: inline-block;
+  // }
+}
+
+.all-products {
+  max-width: 100%;
+}
+.product,
+thead {
+  text-align: center;
+  @include u.breakpoint-down(medium) {
+    display: grid;
+    text-align: left;
+  }
+}
+.btns {
+  @include u.breakpoint-down(medium) {
+    display: inline-flex;
+  }
+}
+.btns a,
+.btns form {
+  @include u.breakpoint-down(medium) {
+    margin-right: u.rem(9);
+  }
+}

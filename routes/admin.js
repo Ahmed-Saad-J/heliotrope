@@ -79,9 +79,65 @@ router.post("/add", isAdmin, upload.single("image"), (req, res, next) => {
       console.log(err);
     } else {
       // item.save();
-      res.redirect("/admin/all");
+      res.redirect("/admin/products");
     }
   });
+});
+
+//GET /admin/products
+router.get("/products", isAdmin, (req, res) => {
+  Product.find({}, (err, products) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("An error occurred", err);
+    } else {
+      res.render("admin/products.ejs", { products: products });
+    }
+  });
+});
+// delete product
+router.delete("/delete/:id", isAdmin, async (req, res) => {
+  let product = await Product.findById(req.params.id);
+  if (!product) {
+    return res.status(404).send("this page doesn't exist");
+  }
+
+  product = await Product.deleteOne({ _id: req.params.id });
+  res.redirect("/admin/products");
+});
+
+//GET edit
+router.get("/edit/:id", isAdmin, async (req, res) => {
+  let product = await Product.findById(req.params.id);
+
+  if (!product) {
+    return res.status(404).send("this page doesn't exist");
+  }
+  res.render("admin/update.ejs", { product: product });
+});
+// post edit
+router.post("/edit/:id", isAdmin, upload.single("image"), async (req, res) => {
+  let product = await Product.findById(req.params.id).lean();
+  if (!product) {
+    return res.status(404).send("this page doesn't exist");
+  }
+  console.log(req.body);
+  product = await Product.findOneAndUpdate({ _id: req.params.id }, req.body, {
+    new: true,
+    runValidators: true,
+  });
+  //check if an image is updated
+  if (req.file) {
+    let img = {
+      data: fs.readFileSync(
+        path.join(__dirname, "..", "uploads", req.file.filename)
+      ),
+      contentType: "image/png",
+    };
+    product.img = img;
+    await product.save();
+  }
+  res.redirect("/admin/products");
 });
 
 module.exports = router;

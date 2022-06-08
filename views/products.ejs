@@ -14,16 +14,9 @@
     <td><%=product.price%>$</td>
 
       <td class="btns">
-        <a href="/admin/edit/<%=product._id%>" class="btn btn-float">
-        <i class="fas fa-edit"></i>
+        <a href="cart/add/<%=product._id%>" class="btn btn-float">
+            <i class="fa-solid fa-cart-plus"></i>
         </a>
-        
-        <form action="/admin/delete/<%=product._id%>" method="post" id="delete-form">
-        <input type="hidden" name="_method" value="DELETE">
-         <button type="submit" class="btn red">
-             <i class="fas fa-trash"></i>
-         </button>
-        </form>
 
     </td>
       

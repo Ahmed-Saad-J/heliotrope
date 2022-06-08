@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+</head>
+<body>
+<div class="container">
+
+    <form action="/admin/edit/<%=product._id%>" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="<%= product.title %> " required>
+        </div>
+        <div>
+            <label for="desc">Description</label>
+            <textarea id="desc" name="desc"  rows="2" value ="<%= product.description %>"></textarea>
+        </div>
+        <div>
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" name="quantity" value = "<%= product.quantity %>" required>
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" value="<%= product.price %>"  required>
+        </div>
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="image" >
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

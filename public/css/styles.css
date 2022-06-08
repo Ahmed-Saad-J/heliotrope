@@ -115,4 +115,43 @@ a:active {
   text-decoration: none;
   display: block;
   margin-top: 1.875rem;
+}
+
+.product img {
+  width: clamp(12.5rem, 20vw, 18.75rem);
+  height: clamp(12.5rem, 20vw, 18.75rem);
+}
+
+td,
+th {
+  padding: 1rem;
+}
+
+.all-products {
+  max-width: 100%;
+}
+
+.product,
+thead {
+  text-align: center;
+}
+@media (max-width: 56.24875em) {
+  .product,
+thead {
+    display: grid;
+    text-align: left;
+  }
+}
+
+@media (max-width: 56.24875em) {
+  .btns {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 56.24875em) {
+  .btns a,
+.btns form {
+    margin-right: 0.5625rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
