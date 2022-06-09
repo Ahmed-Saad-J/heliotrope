@@ -79,6 +79,13 @@ router.post("/add", isAdmin, upload.single("image"), (req, res, next) => {
       console.log(err);
     } else {
       // item.save();
+      fs.unlink(
+        path.join(__dirname, "..", "uploads", req.file.filename),
+        (err) => {
+          if (err) throw err;
+          console.log("path/file.txt was deleted");
+        }
+      );
       res.redirect("/admin/products");
     }
   });
@@ -101,7 +108,7 @@ router.delete("/delete/:id", isAdmin, async (req, res) => {
   if (!product) {
     return res.status(404).send("this page doesn't exist");
   }
-
+  //fs.unlink
   product = await Product.deleteOne({ _id: req.params.id });
   res.redirect("/admin/products");
 });
