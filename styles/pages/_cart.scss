@@ -1,0 +1,17 @@
+@use "../util" as u;
+
+.cart {
+  width: 90%;
+  display: grid;
+  margin-inline: auto;
+}
+.cart-item {
+  display: inline-flex;
+}
+.cart-item div,
+.cart-item a {
+  margin-right: 1vh;
+}
+.cart-item i {
+  font-size: u.rem(18);
+}

@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
 app.use("/admin", require("./routes/admin"));
-//app.use("/cart", require("./routes/cart"));
+app.use("/cart", require("./routes/cart"));
 
 const PORT = process.env.PORT;
 

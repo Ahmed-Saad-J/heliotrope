@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+</head>
+<body>
+
+<div class="cart">
+  <h1>cart</h1>
+  <% if(products){ %> 
+  <% products.forEach(function(product) { %>
+  <div class="cart-item">
+    
+    <div><%=product.item.title%></div>
+    <div><%=product.item.price%>$</div> 
+    <div><%=product.qty %></div>
+    <a href="cart/reduce/<%=product.item._id%>" class="btn btn-float">
+      <i class="fa-solid fa-minus"></i>
+    </a>
+    <a href="cart/remove/<%=product.item._id%>">
+      <i class="fa-solid fa-trash"></i>
+    </a>
+
+  </div>
+  <% }) %>
+  <div class="check-out">
+    <div class="total">
+      total price: <%= totalPrice %> 
+    </div>
+    <a href="#" class="check-out-btn" >checkout</button>
+  </div>
+  <% }else{%>
+    <div>your cart is empty</div>
+    <% } %> 
+
+</div>
+
+<%- include('partials/footer') %>

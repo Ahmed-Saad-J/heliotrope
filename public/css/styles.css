@@ -154,4 +154,62 @@ thead {
 .btns form {
     margin-right: 0.5625rem;
   }
+}
+
+.shop-product img {
+  width: clamp(11.25rem, 18vw, 14.375rem);
+  height: clamp(11.25rem, 18vw, 14.375rem);
+  border-radius: 10px;
+}
+
+.shop-product {
+  display: grid;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 43.75em) {
+  .products-grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 56.25em) {
+  .products-grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.products-contaier {
+  display: grid;
+  margin-inline: auto;
+  margin-top: 10rem;
+  width: 90vw;
+  border-radius: 16px;
+  padding: 10px;
+  background-color: hsl(286deg, 100%, 60%);
+}
+
+.cart {
+  width: 90%;
+  display: grid;
+  margin-inline: auto;
+}
+
+.cart-item {
+  display: inline-flex;
+}
+
+.cart-item div,
+.cart-item a {
+  margin-right: 1vh;
+}
+
+.cart-item i {
+  font-size: 1.125rem;
 }/*# sourceMappingURL=styles.css.map */

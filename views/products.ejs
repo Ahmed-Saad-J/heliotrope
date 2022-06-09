@@ -1,27 +1,26 @@
 <%- include('partials/header') %>
 </head>
 <body>
-<h1>products</h1>
-<table class="all-products">
-    
-    <tbody>
-  <% products.forEach(function(product) { %>
-  <tr class="product">
-    
-      <td><img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"/></td>
-    <td><%=product.title%></td>
-    <td><%=product.quantity%> in stock</td>
-    <td><%=product.price%>$</td>
 
-      <td class="btns">
-        <a href="cart/add/<%=product._id%>" class="btn btn-float">
-            <i class="fa-solid fa-cart-plus"></i>
-        </a>
+<div class="products-container">
+  <h1>products</h1>
 
-    </td>
-      
-  </tr>
-  <% }) %>
+  <div class="all-products products-grid">
+    <% products.forEach(function(product) { %>
+    
+      <div class="shop-product">      
+      <div><img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"/></div>
+      <div><%=product.title%></div>
+      <div><%=product.quantity%> in stock</div>
+      <div><%=product.price%>$</div>
+  
+          <a href="cart/add/<%=product._id%>" class="btn btn-float">
+              <i class="fa-solid fa-cart-plus"></i>
+          </a>
+          
+      </div>
+    <% }) %>
+  </div>
 </div>
 
 <%- include('partials/footer') %>
