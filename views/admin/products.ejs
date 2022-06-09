@@ -1,6 +1,8 @@
 <%- include('partials/header') %>
 </head>
 <body>
+  <%- include('partials/nav') %>
+
 <h1>products</h1>
 <table class="all-products">
     
@@ -8,7 +10,7 @@
   <% products.forEach(function(product) { %>
   <tr class="product">
     
-      <td><img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"/></td>
+    <td><img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"/></td>
     <td><%=product.title%></td>
     <td><%=product.quantity%> in stock</td>
     <td><%=product.price%>$</td>

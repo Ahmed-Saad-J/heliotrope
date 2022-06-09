@@ -1,0 +1,67 @@
+@use "../util" as u;
+// @include u.breakpoint-down(medium) {
+//     display: grid;
+//     text-align: left;
+//   }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(286, 100%, 60%);
+  @include u.breakpoint-down(small) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+.navbar-links {
+  @include u.breakpoint-down(small) {
+    display: none;
+    width: 100%;
+  }
+}
+.navbar-links ul {
+  display: flex;
+  @include u.breakpoint-down(small) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+.navbar-links li {
+  @include u.breakpoint-down(small) {
+    text-align: center;
+  }
+}
+.navbar-links li a {
+  padding: 1rem;
+  display: block;
+
+  @include u.breakpoint-down(small) {
+    padding: 0.5rem 1rem;
+  }
+}
+.navbar-links li:hover {
+  background-color: var(--primary-color);
+}
+.toggle-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: u.rem(30);
+  height: u.rem(21);
+  @include u.breakpoint-down(small) {
+    display: flex;
+  }
+}
+.toggle-btn .bar {
+  font-size: u.rem(20);
+}
+.navbar-links.active {
+  display: flex;
+}

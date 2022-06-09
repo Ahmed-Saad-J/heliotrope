@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <div class="brand-title">Heliotrope</div>
+    <a href="#"class="toggle-btn">
+        <i class="fa-solid fa-bars bar"></i>
+    </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="/products">Products</a></li>
+            <li><a href="#">About</a></li>
+            <% if (user){%> 
+            <li><a href="/cart">Cart</a></li>
+            <%} else{%>
+                <li><a href="/login">Login</a></li>
+            <% } %> 
+        </ul>
+    </div>
+</nav>

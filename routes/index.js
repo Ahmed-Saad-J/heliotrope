@@ -15,7 +15,7 @@ router.get("/products", (req, res) => {
       console.log(err);
       res.status(500).send("An error occurred", err);
     } else {
-      res.render("products.ejs", { products: products });
+      res.render("products.ejs", { products: products, user: req.user });
     }
   });
 });

@@ -35,4 +35,14 @@ input[type="reset"] {
   cursor: pointer;
   outline: inherit;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+}
 //register and login
