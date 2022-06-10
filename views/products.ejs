@@ -5,7 +5,7 @@
 
 <div class="products-container">
   <h1 class="center">Our Products</h1>
-
+  <% if(products){ %> 
   <div class="all-products products-grid">
     <% products.forEach(function(product) { %>
     
@@ -21,7 +21,7 @@
           
       </div>
     <% }) %>
-   
+   <% } %> 
   </div>
 </div>
 
