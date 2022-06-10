@@ -8,7 +8,7 @@
   //border: 3px solid var(--tertiary-color);
   border-radius: 16px;
   padding: 10px;
-  background-color: hsl(286, 100%, 60%);
+  background-color: var(--black25);
 }
 .row {
   display: flex;
@@ -17,15 +17,15 @@
 }
 .form-input {
   border-radius: 4px;
-  background-color: var(--primary-color);
-  color: hsl(0, 0%, 9%);
+  background-color: var(--black10);
+  color: var(--black75);
 }
 .btn.submit {
   width: 100%;
-  background-color: var(--highlight-color);
+  background-color: var(--secondary-color);
   border-radius: 4px;
   border: none;
-  color: var(--tertiary-color);
+  color: var(--black10);
   padding: u.rem(10) u.rem(15);
   text-align: center;
   text-decoration: none;

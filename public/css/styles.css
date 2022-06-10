@@ -12,9 +12,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  font-family: "PT Sans", sans-serif;
+  background-color: var(--black10);
+  color: var(--black);
 }
 
 input {
@@ -58,6 +58,8 @@ h3 {
   font-weight: 700;
   line-height: 1.1;
   margin-top: 0;
+  font-family: "PT Sans Narrow", sans-serif;
+  margin-left: 1rem;
 }
 
 h1 {
@@ -78,14 +80,17 @@ a:visited,
 a:active {
   text-decoration: none;
   font-size: 0.8125rem;
-  color: var(--secondary-color);
+  color: var(--black);
 }
 
 :root {
-  --primary-color: #9c00cc;
-  --secondary-color: #05ff9f;
-  --tertiary-color: #068050;
-  --highlight-color: #ffbc1f;
+  --primary-color: #cf33ff;
+  --secondary-color: #681980;
+  --black: #242125;
+  --black75: #585659;
+  --black50: #8c8b8d;
+  --black25: #c1c0c1;
+  --black10: #e1e0e1;
 }
 
 .grid {
@@ -102,7 +107,7 @@ a:active {
   width: clamp(16.25rem, 30vw, 20rem);
   border-radius: 16px;
   padding: 10px;
-  background-color: hsl(286deg, 100%, 60%);
+  background-color: var(--black25);
 }
 
 .row {
@@ -113,16 +118,16 @@ a:active {
 
 .form-input {
   border-radius: 4px;
-  background-color: var(--primary-color);
-  color: hsl(0deg, 0%, 9%);
+  background-color: var(--black10);
+  color: var(--black75);
 }
 
 .btn.submit {
   width: 100%;
-  background-color: var(--highlight-color);
+  background-color: var(--secondary-color);
   border-radius: 4px;
   border: none;
-  color: var(--tertiary-color);
+  color: var(--black10);
   padding: 0.625rem 0.9375rem;
   text-align: center;
   text-decoration: none;
@@ -134,7 +139,8 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hsl(286deg, 100%, 60%);
+  margin-bottom: 1.25rem;
+  background-color: var(--primary-color);
 }
 @media (max-width: 43.74875em) {
   .navbar {
@@ -182,7 +188,12 @@ a:active {
 }
 
 .navbar-links li:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--black25);
+}
+
+.navbar-links li:hover a {
+  color: var(--black25);
 }
 
 .toggle-btn {
@@ -248,6 +259,15 @@ thead {
   }
 }
 
+h1.center {
+  text-align: center;
+}
+
+.btn i {
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+}
+
 .shop-product img {
   width: clamp(11.25rem, 18vw, 14.375rem);
   height: clamp(11.25rem, 18vw, 14.375rem);
@@ -263,6 +283,7 @@ thead {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
+  grid-row-gap: 0.75rem;
 }
 @media (min-width: 43.75em) {
   .products-grid {
@@ -284,7 +305,7 @@ thead {
   width: 90vw;
   border-radius: 16px;
   padding: 10px;
-  background-color: hsl(286deg, 100%, 60%);
+  background-color: var(--black10);
 }
 
 .cart {
@@ -295,6 +316,7 @@ thead {
 
 .cart-item {
   display: inline-flex;
+  margin-left: 1rem;
 }
 
 .cart-item div,
@@ -304,4 +326,21 @@ thead {
 
 .cart-item i {
   font-size: 1.125rem;
+  color: var(--secondary-color);
+}
+
+.check-out {
+  margin-left: 1rem;
+}
+
+.check-out-btn {
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  border: none;
+  color: var(--black10) !important;
+  padding: 0.625rem 0.9375rem;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 6.25rem;
 }/*# sourceMappingURL=styles.css.map */

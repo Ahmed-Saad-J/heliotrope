@@ -13,6 +13,7 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
+  grid-row-gap: u.rem(12);
   @include u.breakpoint-up(medium) {
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
@@ -30,5 +31,5 @@
   width: 90vw;
   border-radius: 16px;
   padding: 10px;
-  background-color: hsl(286, 100%, 60%);
+  background-color: var(--black10);
 }

@@ -5,8 +5,12 @@
     </a>
     <div class="navbar-links">
         <ul>
-            <li><a href="/admin/products">Products</a></li>
             <li><a href="/products">User View</a></li> 
+            
+            <%if(isAdmin){ %> 
+            <li><a href="/admin/products">Products</a></li>
+            <li><a href="/admin/logout">Logout</a></li>
+            <% }%>
         </ul>
     </div>
 </nav>

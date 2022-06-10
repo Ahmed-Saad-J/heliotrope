@@ -33,3 +33,10 @@ thead {
     margin-right: u.rem(9);
   }
 }
+h1.center {
+  text-align: center;
+}
+.btn i {
+  font-size: u.rem(18);
+  color: var(--secondary-color);
+}

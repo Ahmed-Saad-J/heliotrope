@@ -9,10 +9,12 @@ const { isAdmin } = require("../middleware/adminAuth");
 const Product = require("../models/Product");
 const router = express.Router();
 //const {ensureAuth, ensureGuest} = require('../middleware/auth');
-
+router.get("/", (req, res) => {
+  res.redirect("/admin/login");
+});
 //GET log in
 router.get("/login", (req, res) => {
-  res.render("admin/login.ejs");
+  res.render("admin/login.ejs", { isAdmin: req.session.isAdmin });
 });
 //POST log in
 
@@ -23,17 +25,12 @@ router.post("/login", async (req, res) => {
     (await argon2.verify(process.env.ADMIN_PASSWORD, req.body.password))
   ) {
     req.session.isAdmin = true;
-    res.redirect("/admin");
+    res.redirect("/admin/products");
   } else {
     console.log(process.env.ADMIN_PASSWORD);
     console.log(hash);
     res.redirect("/admin/login");
   }
-});
-
-//GET /admin
-router.get("/", isAdmin, (req, res) => {
-  res.render("admin/index.ejs");
 });
 
 //log out
@@ -57,7 +54,7 @@ let upload = multer({ storage: storage });
 
 //GET /admin/add
 router.get("/add", isAdmin, (req, res) => {
-  res.render("admin/addProduct.ejs");
+  res.render("admin/addProduct.ejs", { isAdmin: req.session.isAdmin });
 });
 
 //POST /admin/product/add
@@ -83,7 +80,6 @@ router.post("/add", isAdmin, upload.single("image"), (req, res, next) => {
         path.join(__dirname, "..", "uploads", req.file.filename),
         (err) => {
           if (err) throw err;
-          console.log("path/file.txt was deleted");
         }
       );
       res.redirect("/admin/products");
@@ -98,7 +94,10 @@ router.get("/products", isAdmin, (req, res) => {
       console.log(err);
       res.status(500).send("An error occurred", err);
     } else {
-      res.render("admin/products.ejs", { products: products });
+      res.render("admin/products.ejs", {
+        products: products,
+        isAdmin: req.session.isAdmin,
+      });
     }
   });
 });
@@ -120,7 +119,10 @@ router.get("/edit/:id", isAdmin, async (req, res) => {
   if (!product) {
     return res.status(404).send("this page doesn't exist");
   }
-  res.render("admin/update.ejs", { product: product });
+  res.render("admin/update.ejs", {
+    product: product,
+    isAdmin: req.session.isAdmin,
+  });
 });
 // post edit
 router.post("/edit/:id", isAdmin, upload.single("image"), async (req, res) => {
