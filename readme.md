@@ -37,4 +37,3 @@
 visit http://localhost:3000/admin to access the admin login page  
 Email: admin@heliotrope.com  
 Password: adminadmin80  
-i hard coded these values in the config.env file
